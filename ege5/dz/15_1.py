@@ -8,7 +8,7 @@ def f(n):
 
 
 l = []
-for i in range(2, 1000):
+for i in range(2, 10000):
     count = 0
     for j in range(i, i + 65):
         if f(j):
