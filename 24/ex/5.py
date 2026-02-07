@@ -1,0 +1,6 @@
+line = open('24_5.txt').readline()
+l = line.replace('3', '1').replace('5', '1').replace('7', '1').replace('9', '1')
+m = l.split('111')
+print(m)
+k = max(m, key=len)
+print(k, len(k) + 4)
