@@ -1,36 +1,36 @@
 line = open('24_12.txt').readline()
 
-line = line.replace('HALLOWEEN', 'h').replace('TRICK', 'i').replace('TREAT', 'e')
+c = [(-1, '')]
+count = 0
 
-h_counter = 0
-i_counter = 0
-e_counter = 0
-left = 0
-counter = 0
+for i in range(len(line) - 5):
+    if i < len(line) - 9:
+        if line[i : i + 9] == 'HALLOWEEN':
+            c.append((i, 'HALLOWEEN'))
+    if line[i : i + 5] == 'TRICK':
+        c.append((i, 'TRICK'))
+    if line[i : i + 5] == 'TREAT':
+        c.append((i, 'TREAT'))
+c.append((len(line), ''))
 
-for right in range(len(line)):
-    if line[right] == 'h':
-        h_counter += 1
-    if line[right] == 'i':
-        i_counter += 1
-    if line[right] == 'e':
-        e_counter += 1
+print(line[:100])
+print(c[:100])
 
-    while h_counter > 5 or i_counter > 5 or e_counter > 5:
-        if line[left] == 'h':
-            h_counter -= 1
-            if h_counter == 5 and i_counter == 5 and e_counter == 5:
-                counter += 8
-        if line[left] == 'i':
-            i_counter -= 1
-            if h_counter == 5 and i_counter == 5 and e_counter == 5:
-                counter += 4
-        if line[left] == 'e':
-            e_counter -= 1
-            if h_counter == 5 and i_counter == 5 and e_counter == 5:
-                counter += 4
-        left += 1
+for i in range(len(c) - 16):
+    d = {'HALLOWEEN' : 0, 'TRICK' : 0, 'TREAT' : 0}
+    for j in range(i + 1, i + 16):
+        d[c[j][1]] += 1
+    if all(x == 5 for x in d.values()):
+        count += (c[i + 1][0] - 1 - (c[i][0] + 1) + 2) * ((c[i + 16][0] + len(c[i + 16][1]) - 2) - (c[i + 15][0] + len(c[i + 15][1])) + 2)
+print(count)
 
-    if h_counter == 5 and i_counter == 5 and e_counter == 5:
-        counter += 1
-print(counter)
+# 'aTRICKaghdjTREAD.....HALLOWEENghfkTREAD'
+# - TREAD1[0] -> ind T -> -1 -> ind j (10)
+# - TRICK[0] -> ind T -> + 1 -> ind R (2)
+# - количество вариаций [ afgdh ( TREAD ] nkwej)
+# - ind j - ind R + 1 -> сколько символов -> + 1 подхватить вариант с 0 символов (10)
+
+# - TREAD2[0] -> ind T -> + 5  - 1 -> ind D -> -1 -> ind A (16)
+# - HALLOWEEN[0] -> ind H -> + 9 - 1 -> ind N -> + 1 -> ind g (9)
+# - ind A - ind j + 1 - сколько символов -> + 1 подхватить вариант с 0 символов (9)
+
