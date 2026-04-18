@@ -20,9 +20,10 @@ n_max = 0
 
 for n in range(100, 1000):
     dig = f(n)
-    simple_dig = [x for x in dig if simple(x)]
+    simple_dig = set([x for x in dig if simple(x)])
     if len(simple_dig) >= count_max:
         n_max = n
         count_max = len(simple_dig)
 
-print(n_max)
+print(n_max, count_max)
+print(f(n_max), [x for x in f(n_max) if simple(x)])
