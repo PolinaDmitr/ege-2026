@@ -10,6 +10,6 @@ with open('17_6.txt') as file:
         l2 = l[i + 1] if l[i + 1] > l_max else 0
 
         if (int(l1 != 0) + int(l2 != 0) == 1) and \
-                (str(l[i])[0] == '9' or str(l[i + 1])[0] == '9'):
+                (str(l[i])[0] == '9.py' or str(l[i + 1])[0] == '9.py'):
             m.append(l1 + l2)
     print(len(m), sum(m))

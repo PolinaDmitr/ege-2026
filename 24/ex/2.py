@@ -8,7 +8,7 @@ for i in range(len(line)):
             k_max = max(k_max, k_len)
         dig = 0
         k_len = 0
-    elif line[i] in ('1', '3', '5', '7', '9'):
+    elif line[i] in ('1', '3', '5', '7', '9.py'):
         dig += 1
         if dig > 45:
             k_max = max(k_max, k_len)

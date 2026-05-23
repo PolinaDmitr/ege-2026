@@ -15,7 +15,7 @@ for i in l:
     print(i , i // 1432)
 
 print()
-reg = r'^8902[0-9][0-9][0-9]*'
+reg = r'^8902[0-9.py][0-9.py][0-9.py]*'
 
 start = 8902001 // 1432 * 1432
 for i in range(start, 10 ** 10, 1432):

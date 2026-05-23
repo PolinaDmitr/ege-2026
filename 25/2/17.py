@@ -3,7 +3,7 @@ from re import *
 p2 = [2 ** x for x in range(1, 14)]
 
 # 8902??&
-reg = r'^8902[0-9]{2}[0-9]+$'
+reg = r'^8902[0-9.py]{2}[0-9.py]+$'
 start = 890200 // 1432 * 1432
 for i in range(start, 10 ** 10, 1432):
     num_str = str(i)

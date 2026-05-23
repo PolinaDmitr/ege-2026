@@ -26,7 +26,7 @@ for s in range(1, 11):
         x = g(s, m)
         if f(x, 0, (1,)):
             print(s, m)
-#9
+#9.py
 print()
 for s in range(1, 11):
     for m in range(2, 21):

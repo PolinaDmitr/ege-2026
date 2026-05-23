@@ -1,5 +1,5 @@
 line = open('24_3.txt').readline()
-line = line.replace('3', '1').replace('5', '1').replace('7', '1').replace('9', '1')
+line = line.replace('3', '1').replace('5', '1').replace('7', '1').replace('9.py', '1')
 line = line.replace('111', '11 11')
 l = line.split()
 # print(l)

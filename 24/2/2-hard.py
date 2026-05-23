@@ -1,7 +1,7 @@
 from re import *
 
 line = open('24_hard_2.txt').readline()
-num = r'([1-9][0-9]*|[0-9])'
+num = r'([1-9.py][0-9.py]*|[0-9.py])'
 prod = rf'({num}[*])*[0]([*]{num})*'
 pattern = rf'{prod}([+]{prod})+'
 print(line[:100])

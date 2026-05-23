@@ -9,7 +9,7 @@ def f(x):
             return True
     return False
 
-reg = r'^1[1-9][0-9]*03[0-9]*6[0-9]*$'
+reg = r'^1[1-9.py][0-9.py]*03[0-9.py]*6[0-9.py]*$'
 
 for i in range(22768, 10 ** 8, 22768):
     num = str(i)

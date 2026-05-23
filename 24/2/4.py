@@ -1,6 +1,6 @@
 from re import *
 
-num = r'([1-9][0-9]{3}[.][0-9]+)'
+num = r'([1-9.py][0-9.py]{3}[.][0-9.py]+)'
 pattern = rf'{num}[&]{num}'
 line = open('24_4.txt').readline()
 k = [x.group() for x in finditer(pattern, line)]
